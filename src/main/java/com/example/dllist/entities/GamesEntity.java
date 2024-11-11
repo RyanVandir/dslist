@@ -11,13 +11,18 @@ public class GamesEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
+
     @Column(name = "game_year")
     private Integer year;
     private String genre;
     private String platforms;
-    private Double scores;
+    private Double score;
     private String imgUrl;
+
+    @Column(columnDefinition = "TEXT")
     private String shortDescription;
+
+    @Column(columnDefinition = "TEXT") // Usada para textos longos 
     private String longDescription;
 
     public GamesEntity() {
@@ -29,7 +34,7 @@ public class GamesEntity {
         this.year = year;
         this.genre = genre;
         this.platforms = platforms;
-        this.scores = scores;
+        this.score = scores;
         this.imgUrl = imgUrl;
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;
@@ -75,12 +80,12 @@ public class GamesEntity {
         this.platforms = platforms;
     }
 
-    public Double getScores() {
-        return scores;
+    public Double getScore() {
+        return score;
     }
 
-    public void setScores(Double scores) {
-        this.scores = scores;
+    public void setScore(Double score) {
+        this.score = score;
     }
 
     public String getImgUrl() {

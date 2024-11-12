@@ -1,6 +1,7 @@
 package com.example.dllist.dto;
 
 import com.example.dllist.entities.GameEntity;
+import com.example.dllist.projections.GameMinProjection;
 import jakarta.persistence.*;
 
 @Entity
@@ -25,6 +26,13 @@ public class GameMinDTO {
         year = gamesEntity.getYear();
         imgUrl = gamesEntity.getImgUrl();
         shortDescription = gamesEntity.getShortDescription();
+    }
+    public GameMinDTO(GameMinProjection gameMinProjection) {
+        id = gameMinProjection.getId();
+        title = gameMinProjection.getTitle();
+        year = gameMinProjection.getYear();
+        imgUrl = gameMinProjection.getImgUrl();
+        shortDescription = gameMinProjection.getShortDescription();
     }
 
     public Long getId() {

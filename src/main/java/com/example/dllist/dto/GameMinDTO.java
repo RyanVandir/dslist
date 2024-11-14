@@ -4,8 +4,6 @@ import com.example.dllist.entities.GameEntity;
 import com.example.dllist.projections.GameMinProjection;
 import jakarta.persistence.*;
 
-@Entity
-@Table(name = "tb_game")
 public class GameMinDTO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
